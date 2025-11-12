@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: esim-tech
+    env: python
+    region: frankfurt
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn esim_site.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: esim_site.settings
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: esim.tech, www.esim.tech, esim-tech.onrender.com
