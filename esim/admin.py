@@ -2,11 +2,24 @@ from django.contrib import admin
 from django.utils.html import format_html
 from .models import ESIM, Order
 
+class CustomAdminSite(admin.AdminSite):
+    class Media:
+        css = {
+            'all': ('admin/css/admin_custom.css',)
+        }
+
+admin.site = CustomAdminSite()
+
 @admin.register(ESIM)
 class ESIMAdmin(admin.ModelAdmin):
     list_display = ('ICCID', 'phone_number', 'colored_status', 'assigned_to', 'created_at')
     search_fields = ('ICCID', 'phone_number')
     list_filter = ('is_active',)
+
+    class Media:
+        css = {
+            'all': ('admin/css/admin_custom.css',)
+        }
 
     def colored_status(self, obj):
         color = 'green' if obj.is_active else 'red'
@@ -15,9 +28,13 @@ class ESIMAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('user', 'esim', 'colored_status', 'created_at')
     list_filter = ('status',)
     search_fields = ('user__username', 'esim__ICCID')
+
+    class Media:
+        css = {
+            'all': ('admin/css/admin_custom.css',)
+        }
 
     def colored_status(self, obj):
         colors = {'pending': 'orange', 'completed': 'green', 'canceled': 'red'}

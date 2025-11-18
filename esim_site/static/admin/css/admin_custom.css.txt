@@ -1,0 +1,185 @@
+//* ================================
+   Modern Blue-White Django Admin
+   Custom Theme by ChatGPT
+================================ */
+
+/* COLORS */
+:root {
+    --blue: #0d6efd;
+    --blue-dark: #0b5ed7;
+    --blue-light: #e8f1ff;
+    --bg-light: #f8f9fa;
+    --text-dark: #212529;
+}
+
+/* -------------------------------
+   GLOBAL BODY
+-------------------------------- */
+body {
+    background-color: var(--bg-light) !important;
+    color: var(--text-dark) !important;
+    font-family: "Inter", "Segoe UI", sans-serif !important;
+}
+
+/* -------------------------------
+   HEADER BAR
+-------------------------------- */
+#header {
+    background: var(--blue) !important;
+    color: #fff !important;
+    padding: 14px 30px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+#header h1 {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+}
+
+#header a {
+    color: #fff !important;
+}
+
+/* -------------------------------
+   SIDEBAR (Django 5.x)
+-------------------------------- */
+nav#nav-sidebar {
+    background: #fff !important;
+    border-right: 1px solid #e0e0e0 !important;
+}
+
+nav#nav-sidebar a {
+    padding: 10px 15px !important;
+    display: block;
+    color: var(--text-dark) !important;
+    border-radius: 6px !important;
+}
+
+nav#nav-sidebar a:hover {
+    background: var(--blue-light) !important;
+    color: var(--blue) !important;
+}
+
+/* ACTIVE LINK */
+nav#nav-sidebar .current-app a {
+    background: var(--blue-light) !important;
+    font-weight: 600 !important;
+}
+
+/* -------------------------------
+   LOGIN PAGE
+-------------------------------- */
+.login #container {
+    max-width: 400px !important;
+    margin: 80px auto !important;
+    padding: 35px !important;
+    background: #fff !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+}
+
+.login h1 {
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    color: var(--blue) !important;
+}
+
+/* LOGIN INPUTS */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    border: 1px solid #ced4da !important;
+    border-radius: 6px !important;
+    padding: 8px 10px !important;
+    font-size: 14px !important;
+}
+
+input:focus {
+    border-color: var(--blue) !important;
+    box-shadow: 0 0 0 3px rgba(13,110,253,0.25) !important;
+}
+
+/* -------------------------------
+   BUTTONS
+-------------------------------- */
+button, .button, input[type=submit] {
+    background: var(--blue) !important;
+    border-radius: 6px !important;
+    padding: 7px 16px !important;
+    border: none !important;
+    font-size: 14px !important;
+    color: #fff !important;
+    cursor: pointer !important;
+    transition: background 0.2s ease;
+}
+
+button:hover,
+.button:hover,
+input[type=submit]:hover {
+    background: var(--blue-dark) !important;
+}
+
+/* -------------------------------
+   TABLES
+-------------------------------- */
+table {
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+table thead th {
+    background: var(--blue-light) !important;
+    color: var(--text-dark) !important;
+}
+
+table tbody tr:hover {
+    background: #f2f6ff !important;
+}
+
+/* -------------------------------
+   FORM WIDGETS
+-------------------------------- */
+.form-row input,
+.form-row select,
+.form-row textarea {
+    border-radius: 6px !important;
+}
+
+/* -------------------------------
+   MESSAGES (SUCCESS, WARNING, ERROR)
+-------------------------------- */
+.success {
+    background: #d1e7dd !important;
+    border-color: #badbcc !important;
+    color: #0f5132 !important;
+}
+
+.warning {
+    background: #fff3cd !important;
+    border-color: #ffecb5 !important;
+    color: #664d03 !important;
+}
+
+.errornote,
+.errorlist li {
+    background: #f8d7da !important;
+    border-color: #f5c2c7 !important;
+    color: #842029 !important;
+}
+
+/* -------------------------------
+   FOOTER
+-------------------------------- */
+#footer {
+    background: #fff !important;
+    border-top: 1px solid #e0e0e0 !important;
+    padding: 12px;
+    font-size: 13px;
+    color: #6c757d;
+    text-align: center;
+    .login #container {
+    padding-top: 20px !important;
+}
+}

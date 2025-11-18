@@ -1,0 +1,56 @@
+/* GENEL */
+body, #header, .module caption {
+    background-color: #f5faff !important;
+}
+
+/* ÜST BAR */
+#header {
+    background: linear-gradient(90deg, #1e6ce4, #3c8dff);
+    color: white;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+#header a:link, #header a:visited {
+    color: #ffffff !important;
+}
+
+/* SOL MENU */
+#nav-sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid #d1e3ff;
+}
+
+#nav-sidebar .module caption {
+    background: #1e6ce4 !important;
+    color: white;
+}
+
+/* BUTONLAR */
+button, input[type="submit"], .button, .button.default {
+    background-color: #1e6ce4 !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #3c8dff !important;
+}
+
+/* FORM ELEMANLARI */
+input, select, textarea {
+    border: 1px solid #95b8ff !important;
+    border-radius: 5px !important;
+    background-color: #ffffff !important;
+}
+
+/* TABLOLAR */
+.table thead th {
+    background-color: #1e6ce4 !important;
+    color: white !important;
+}
