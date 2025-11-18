@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+
+{% load static %}
+
+{% block title %}ESIM Admin Paneli{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin_custom.css' %}">
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name" style="color:#60A5FA; font-weight:600;">
+    ESIM Admin Paneli
+</h1>
+{% endblock %}
