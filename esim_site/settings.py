@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'esimapp',
     'esim', 
-    
+    'rest_framework',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -147,3 +148,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CSRF_COOKIE_SECURE = True
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
