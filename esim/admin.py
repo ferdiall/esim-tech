@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.template.response import TemplateResponse
 from django.urls import path
+from django.contrib.auth.models import User
 from .models import ESIM
 
 class CustomAdminSite(admin.AdminSite):
@@ -16,21 +17,28 @@ class CustomAdminSite(admin.AdminSite):
         return custom + urls
 
     def dashboard_view(self, request):
-        # ESIM modeline göre sayımlar
+        # ESIM model verileri
+        total_esim = ESIM.objects.count()
         active_count = ESIM.objects.filter(is_active=True).count()
         passive_count = ESIM.objects.filter(is_active=False).count()
-        blocked_count = 0  # Bu modelde blocked yok
 
+        # kullanıcı sayısı
+        total_users = User.objects.count()
+
+        # Template'e göndereceğimiz veriler
         context = {
             **self.each_context(request),
+            "total_esim": total_esim,
             "active_count": active_count,
             "passive_count": passive_count,
-            "blocked_count": blocked_count,
+            "blocked_count": 0,  # Blokeli alan modelde yok
+            "total_users": total_users,
         }
 
         return TemplateResponse(request, "admin/index.html", context)
 
+# Custom admin site oluştur
 custom_admin_site = CustomAdminSite(name="custom_admin")
 
-# Model kaydı
+# modelleri kaydet
 custom_admin_site.register(ESIM)
