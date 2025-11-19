@@ -3,6 +3,31 @@ from django.template.response import TemplateResponse
 from django.urls import path
 from django.contrib.auth.models import User
 from .models import ESIM
+from .models import ESIM, Order
+
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ("id", "user", "colored_status", "esim", "created_at")
+    list_filter = ("status", "created_at")
+    search_fields = ("id", "user__username")
+
+    def colored_status(self, obj):
+        if obj.status == "pending":
+            color = "#facc15"  # sarı
+            label = "Beklemede"
+        elif obj.status == "completed":
+            color = "#22c55e"  # yeşil
+            label = "Tamamlandı"
+        else:
+            color = "#ef4444"  # kırmızı
+            label = "İptal Edildi"
+
+        return format_html(
+            '<span style="color: white; background:{}; padding:4px 10px; border-radius:6px;">{}</span>',
+            color, label
+        )
+
+    colored_status.short_description = "Durum"
+
 
 class CustomAdminSite(admin.AdminSite):
     site_header = "ESIM Yönetim Paneli"
@@ -65,3 +90,4 @@ class ESIMAdmin(admin.ModelAdmin):
 
 # modelleri kaydet
 custom_admin_site.register(ESIM, ESIMAdmin)
+custom_admin_site.register(Order, OrderAdmin)
