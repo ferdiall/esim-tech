@@ -1,11 +1,11 @@
-{% extends "admin/index.html" %}
+{% extends "admin/base_site.html" %}
 {% load static %}
 
 {% block content %}
 
 <h1 style="margin-bottom:20px; font-size:22px; color:#1f4e6e;">Yönetim Paneli</h1>
 
-<!-- GRAFİK KARTI -->
+<!-- PIE CHART -->
 <div style="
     background:white;
     padding:20px;
@@ -13,49 +13,23 @@
     border:1px solid #e5e7eb;
     box-shadow:0 4px 8px rgba(0,0,0,0.05);
     margin-bottom:30px;
+    width:400px;
 ">
-    <h2 style="color:#1f4e6e; margin-bottom:15px;">Son 6 Aylık Kullanıcı Artışı</h2>
-    <canvas id="userChart" style="width:100%; height:300px;"></canvas>
+    <h2 style="color:#1f4e6e; margin-bottom:15px;">SIM Kart Durum Dağılımı</h2>
+    <canvas id="statusChart" style="width:100%; height:300px;"></canvas>
 </div>
 
 {{ block.super }}
 
-<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    var ctx = document.getElementById("userChart").getContext("2d");
+    var ctx = document.getElementById('statusChart');
 
-    var userChart = new Chart(ctx, {
-        type: "line",
+    var statusChart = new Chart(ctx, {
+        type: 'pie',
         data: {
-            labels: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran"],
+            labels: ['Aktif', 'Pasif', 'Blokeli'],
             datasets: [{
-                label: "Yeni Kullanıcılar",
-                data: [120, 180, 140, 220, 300, 280],
-                borderWidth: 3,
-                tension: 0.3,
-                borderColor: "#1aa6e1",
-                pointBackgroundColor: "#1f4e6e",
-                fill: true,
-                backgroundColor: "rgba(26,166,225,0.15)"
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: { color: "#1f4e6e" }
-                },
-                x: {
-                    ticks: { color: "#1f4e6e" }
-                }
-            }
-        }
-    });
-});
-</script>
-
-{% endblock %}
+                data: [
