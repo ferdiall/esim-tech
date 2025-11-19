@@ -16,23 +16,20 @@ class CustomAdminSite(admin.AdminSite):
         return custom + urls
 
     def dashboard_view(self, request):
-        # Verileri çek
         active_count = SimCard.objects.filter(status="active").count()
         passive_count = SimCard.objects.filter(status="passive").count()
         blocked_count = SimCard.objects.filter(status="blocked").count()
 
-        # Template'e gönder
         context = {
             **self.each_context(request),
             "active_count": active_count,
             "passive_count": passive_count,
-            "blocked_count": blocked_count
+            "blocked_count": blocked_count,
         }
 
         return TemplateResponse(request, "admin/index.html", context)
 
-
 custom_admin_site = CustomAdminSite(name="custom_admin")
 
-# Modelleri kaydet
+# Model kaydı
 custom_admin_site.register(SimCard)
