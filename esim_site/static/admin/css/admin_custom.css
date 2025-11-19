@@ -252,3 +252,91 @@ div.breadcrumbs {
     background: #e8f2ff;
     padding-left: 10px;
 }
+/*********************************************
+   PREMIUM ADMIN UI - ADVANCED CUSTOMIZATION
+**********************************************/
+
+/* ==== DASHBOARD KART TASARIMI ==== */
+.dashboard .module {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 14px !important;
+    padding: 18px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+.dashboard .module caption {
+    background: transparent !important;
+    color: #1f4e6e !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    padding-left: 0 !important;
+    border-bottom: none !important;
+}
+
+/* ==== MODERN CHIP BUTTONLAR ==== */
+.object-tools a, 
+.addlink, 
+.changelink {
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    font-weight: 500 !important;
+    background: #1aa6e1 !important;
+    border: none !important;
+    color: white !important;
+    transition: 0.2s ease !important;
+}
+
+.object-tools a:hover {
+    background: #1489bb !important;
+    transform: translateY(-1px);
+}
+
+/* ==== HEADER ICON MENÜ ==== */
+#custom-top-icons {
+    position: absolute;
+    right: 30px;
+    top: 50px;
+}
+
+#custom-top-icons a {
+    margin-left: 12px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 0.85;
+    transition: 0.15s ease;
+}
+
+#custom-top-icons a:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ==== SIDEBAR ANİMASYONU ==== */
+#nav-sidebar .model {
+    transition: 0.2s ease !important;
+}
+
+#nav-sidebar .model:hover {
+    background: #eaf4ff !important;
+    transform: translateX(4px);
+}
+
+/* ==== MODERN TABLO GÖRÜNÜMÜ ==== */
+#changelist-form tbody tr {
+    border-bottom: 1px solid #edf2f7 !important;
+}
+
+#changelist-form tbody tr:hover {
+    background: #f7fbff !important;
+}
+
+/* ==== FORM SAYFASI KART TASARIMI ==== */
+.change-form #content {
+    background: #ffffff !important;
+    padding: 25px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.06) !important;
+}
