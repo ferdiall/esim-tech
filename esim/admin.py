@@ -50,6 +50,10 @@ class CustomAdminSite(admin.AdminSite):
         # kullanıcı sayısı
         total_users = User.objects.count()
 
+        pending_orders = Order.objects.filter(status="pending").count()
+        completed_orders = Order.objects.filter(status="completed").count()
+        canceled_orders = Order.objects.filter(status="canceled").count()
+
         # Template'e göndereceğimiz veriler
         context = {
             **self.each_context(request),
@@ -58,7 +62,13 @@ class CustomAdminSite(admin.AdminSite):
             "passive_count": passive_count,
             "blocked_count": 0,  # Blokeli alan modelde yok
             "total_users": total_users,
+
+            "pending_orders": pending_orders,
+            "completed_orders": completed_orders,
+            "canceled_orders": canceled_orders,
         }
+
+
 
         return TemplateResponse(request, "admin/index.html", context)
 
