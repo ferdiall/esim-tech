@@ -106,3 +106,108 @@ table thead th {
 .paginator a:hover {
     background: #d7efff !important;
 }
+/* SIDEBAR KART GÖRÜNÜMÜ */
+#nav-sidebar {
+    padding: 15px;
+    background: #ffffff !important;
+}
+
+#nav-sidebar .app-auth,
+#nav-sidebar .module {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+#nav-sidebar .app-auth h2 {
+    font-size: 14px !important;
+    padding: 8px 15px !important;
+    color: #1d4e89 !important;
+    border-bottom: 1px solid #eaeaea;
+}
+#nav-sidebar .model {
+    padding: 10px 15px !important;
+    border-radius: 6px;
+}
+
+#nav-sidebar .model:hover {
+    background: #eef6ff !important;
+    cursor: pointer;
+}
+.dashboard #content-related {
+    border-radius: 12px !important;
+    background: #ffffff;
+    border: 1px solid #e5e7eb !important;
+    padding: 15px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+/* Modern Buton Tasarımı */
+.button,
+input[type=submit],
+.addlink,
+.changelink,
+.deletelink {
+    background: #1d4e89 !important;
+    color: white !important;
+    border-radius: 6px !important;
+    padding: 6px 12px !important;
+    border: none !important;
+}
+
+.button:hover,
+input[type=submit]:hover {
+    background: #163b68 !important;
+}
+/* Modern Tablo Tasarımı */
+#changelist-form table {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 10px !important;
+    overflow: hidden;
+    background: white !important;
+}
+
+#changelist-form thead {
+    background: #f8fafc !important;
+}
+
+#changelist-form th {
+    padding: 12px !important;
+    font-size: 14px !important;
+    color: #1d4e89 !important;
+}
+
+#changelist-form td {
+    padding: 10px !important;
+    border-top: 1px solid #e5e7eb;
+}
+/* Form inputları modern tasarım */
+input, select, textarea {
+    border-radius: 6px !important;
+    border: 1px solid #d1d5db !important;
+    padding: 8px !important;
+    font-size: 14px !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #1d4e89 !important;
+    box-shadow: 0 0 0 1px #1d4e89;
+}
+/* Breadcrumb modern görünüm */
+div.breadcrumbs {
+    background: #eef6ff !important;
+    color: #1d4e89 !important;
+    padding: 10px 15px !important;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+/* Breadcrumb modern görünüm */
+div.breadcrumbs {
+    background: #eef6ff !important;
+    color: #1d4e89 !important;
+    padding: 10px 15px !important;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
