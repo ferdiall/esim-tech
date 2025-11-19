@@ -4,6 +4,83 @@
 {% block content %}
 
 <h1 style="margin-bottom:20px; font-size:22px; color:#1f4e6e;">Yönetim Paneli</h1>
+
+<!-- DASHBOARD INFO CARDS -->
+<div style="
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+">
+
+    <!-- Toplam ESIM -->
+    <div style="
+        flex: 1;
+        min-width: 220px;
+        background:white;
+        padding:20px;
+        border-radius:16px;
+        border:1px solid #e5e7eb;
+        box-shadow:0 4px 8px rgba(0,0,0,0.05);
+    ">
+        <h3 style="color:#1f4e6e;">Toplam eSIM</h3>
+        <p style="font-size:32px; font-weight:bold; color:#1f4e6e;">
+            {{ total_esim }}
+        </p>
+    </div>
+
+    <!-- Aktif ESIM -->
+    <div style="
+        flex: 1;
+        min-width: 220px;
+        background:white;
+        padding:20px;
+        border-radius:16px;
+        border:1px solid #e5e7eb;
+        box-shadow:0 4px 8px rgba(0,0,0,0.05);
+    ">
+        <h3 style="color:#22c55e;">Aktif eSIM</h3>
+        <p style="font-size:32px; font-weight:bold; color:#22c55e;">
+            {{ active_count }}
+        </p>
+    </div>
+
+    <!-- Pasif ESIM -->
+    <div style="
+        flex: 1;
+        min-width: 220px;
+        background:white;
+        padding:20px;
+        border-radius:16px;
+        border:1px solid #e5e7eb;
+        box-shadow:0 4px 8px rgba(0,0,0,0.05);
+    ">
+        <h3 style="color:#3b82f6;">Pasif eSIM</h3>
+        <p style="font-size:32px; font-weight:bold; color:#3b82f6;">
+            {{ passive_count }}
+        </p>
+    </div>
+
+    <!-- Kullanıcı Sayısı -->
+    <div style="
+        flex: 1;
+        min-width: 220px;
+        background:white;
+        padding:20px;
+        border-radius:16px;
+        border:1px solid #e5e7eb;
+        box-shadow:0 4px 8px rgba(0,0,0,0.05);
+    ">
+        <h3 style="color:#1f4e6e;">Toplam Kullanıcı</h3>
+        <p style="font-size:32px; font-weight:bold; color:#1f4e6e;">
+            {{ total_users }}
+        </p>
+    </div>
+
+</div>
+
+
+<h1 style="margin-bottom:20px; font-size:22px; color:#1f4e6e;">Yönetim Paneli</h1>
 <h1 style="margin-bottom:20px; font-size:22px; color:#1f4e6e;">Yönetim Paneli</h1>
 
 <!-- 📊 DASHBOARD İSTATİSTİK KARTLARI -->
