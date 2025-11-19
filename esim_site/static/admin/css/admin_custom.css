@@ -1,0 +1,57 @@
+/* ÜST BAR RENKLERİ */
+#header {
+    background: #1d4e89 !important;
+    color: #fff;
+}
+
+#header a:link,
+#header a:visited {
+    color: #fff !important;
+}
+
+/* SAYFA ARKA PLANI */
+body {
+    background: #f4f8fb !important;
+}
+
+/* LOGIN FORM KONTEYNERİ */
+.login #container {
+    padding: 30px !important;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* BUTONLAR */
+.button.default,
+input[type=submit] {
+    background-color: #1aa6e1 !important;
+    border-color: #1aa6e1 !important;
+}
+
+.button.default:hover,
+input[type=submit]:hover {
+    background-color: #1489bb !important;
+}
+
+/* TABLOLAR */
+.module table {
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.row1,
+.row2 {
+    background: #ffffff !important;
+}
+
+.row1:hover,
+.row2:hover {
+    background: #eef7ff !important;
+}
+
+/* LİNK RENKLERİ */
+a {
+    color: #1d4e89 !important;
+}
