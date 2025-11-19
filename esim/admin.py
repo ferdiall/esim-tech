@@ -39,6 +39,29 @@ class CustomAdminSite(admin.AdminSite):
 
 # Custom admin site oluştur
 custom_admin_site = CustomAdminSite(name="custom_admin")
+from django.utils.html import format_html
+
+class ESIMAdmin(admin.ModelAdmin):
+    list_display = ("ICCID", "colored_status", "assigned_to", "created_at")
+    list_filter = ("is_active", "assigned_to")
+    search_fields = ("ICCID", "phone_number")
+
+    def colored_status(self, obj):
+        if obj.is_active:
+            color = "#22c55e"  # yeşil
+            label = "Aktif"
+        else:
+            color = "#3b82f6"  # mavi
+            label = "Pasif"
+
+        return format_html(
+            '<span style="color: white; background:{}; padding:4px 10px; border-radius:6px;">{}</span>',
+            color,
+            label,
+        )
+
+    colored_status.short_description = "Durum"
+
 
 # modelleri kaydet
-custom_admin_site.register(ESIM)
+custom_admin_site.register(ESIM, ESIMAdmin)
