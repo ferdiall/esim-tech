@@ -1,13 +1,11 @@
-{% extends "admin/login.html" %}
+{% extends "admin/base_site.html" %}
 {% load static %}
 
-{% block base_css %}
-    {{ block.super }}
-    <link rel="stylesheet" href="{% static 'admin/css/admin_custom.css' %}">
-    <div style="text-align:center; margin-bottom: 25px;">
+{% block branding %}
+<div style="text-align:center; margin-bottom:20px;">
     <img src="{% static 'admin/img/logo.png' %}" 
-         alt="eSIM Logo"
-         style="width:180px; height:auto; margin-bottom:10px;">
+         alt="ESIM Logo"
+         style="width:150px; height:auto;">
 </div>
 {{ block.super }}
 {% endblock %}
