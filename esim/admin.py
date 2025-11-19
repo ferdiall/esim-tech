@@ -40,3 +40,30 @@ class OrderAdmin(admin.ModelAdmin):
         colors = {'pending': 'orange', 'completed': 'green', 'canceled': 'red'}
         return format_html(f'<b style="color:{colors[obj.status]}">{obj.get_status_display()}</b>')
     colored_status.short_description = 'Durum'
+
+    from django.utils.html import format_html
+from django.contrib import admin
+from .models import SimCard
+
+@admin.register(SimCard)
+class SimCardAdmin(admin.ModelAdmin):
+    list_display = ("id", "phone_number", "status_colored", "created_at")
+
+    def status_colored(self, obj):
+        colors = {
+            "active": "green",
+            "pending": "orange",
+            "blocked": "red",
+            "expired": "gray"
+        }
+
+        color = colors.get(obj.status, "blue")
+
+        return format_html(
+            '<span class="status-badge" style="background:{};">{}</span>',
+            color,
+            obj.status.capitalize()
+        )
+
+    status_colored.short_description = "Status"
+
