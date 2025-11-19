@@ -211,3 +211,44 @@ div.breadcrumbs {
     border-radius: 8px;
     margin-bottom: 20px;
 }
+/* HEADER TASARIMI */
+#header {
+    background: #1f4e6e !important;
+    padding: 10px 20px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#site-name img {
+    height: 48px !important;
+    margin-top: 2px;
+}
+
+#user-tools {
+    font-size: 14px;
+    font-weight: 500;
+}
+/* HEADER TASARIMI */
+#header {
+    background: #1f4e6e !important;
+    padding: 10px 20px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#site-name img {
+    height: 48px !important;
+    margin-top: 2px;
+}
+
+#user-tools {
+    font-size: 14px;
+    font-weight: 500;
+}
+/* SIDEBAR MENU */
+#nav-sidebar .app-auth a {
+    transition: 0.15s ease;
+}
+
+#nav-sidebar .app-auth a:hover {
+    background: #e8f2ff;
+    padding-left: 10px;
+}
