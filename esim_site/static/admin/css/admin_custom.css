@@ -55,3 +55,54 @@ input[type=submit]:hover {
 a {
     color: #1d4e89 !important;
 }
+/* SOL MENÜ MODERN TASARIM */
+#nav-sidebar {
+    background: #ffffff !important;
+    border-right: 1px solid #e2e8f0 !important;
+}
+
+#nav-sidebar .module {
+    border: none !important;
+    background: transparent !important;
+}
+
+#nav-sidebar .model, 
+#nav-sidebar .current-app .model {
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+#nav-sidebar .model:hover {
+    background: #eef7ff !important;
+}
+
+/* SOL MENÜ BAŞLIKLARI */
+#nav-sidebar h2 {
+    padding-left: 12px !important;
+    font-size: 15px !important;
+    font-weight: bold;
+    color: #1d4e89 !important;
+}
+/* TABLO BAŞLIKLARI */
+table thead th {
+    background: #1d4e89 !important;
+    color: #fff !important;
+    font-weight: bold !important;
+}
+
+/* TABLO SATIR ARKAPLANLARINI İYİLEŞTİR */
+.change-list .results tbody tr:hover td {
+    background: #eef7ff !important;
+}
+
+/* SAYFALAMA MODERNLEŞTİRME */
+.paginator a,
+.paginator span {
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin: 0 2px;
+}
+
+.paginator a:hover {
+    background: #d7efff !important;
+}
