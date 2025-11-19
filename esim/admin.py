@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.template.response import TemplateResponse
 from django.urls import path
-from .models import SimCard
+from .models import ESIM
 
 class CustomAdminSite(admin.AdminSite):
     site_header = "ESIM Yönetim Paneli"
@@ -16,9 +16,10 @@ class CustomAdminSite(admin.AdminSite):
         return custom + urls
 
     def dashboard_view(self, request):
-        active_count = SimCard.objects.filter(status="active").count()
-        passive_count = SimCard.objects.filter(status="passive").count()
-        blocked_count = SimCard.objects.filter(status="blocked").count()
+        # ESIM modeline göre sayımlar
+        active_count = ESIM.objects.filter(is_active=True).count()
+        passive_count = ESIM.objects.filter(is_active=False).count()
+        blocked_count = 0  # Bu modelde blocked yok
 
         context = {
             **self.each_context(request),
@@ -32,4 +33,4 @@ class CustomAdminSite(admin.AdminSite):
 custom_admin_site = CustomAdminSite(name="custom_admin")
 
 # Model kaydı
-custom_admin_site.register(SimCard)
+custom_admin_site.register(ESIM)
